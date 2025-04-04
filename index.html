@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,46 +13,46 @@
             box-sizing: border-box;
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
         }
-        
+
         body {
             color: #333;
             line-height: 1.6;
         }
-        
+
         a {
             text-decoration: none;
             color: inherit;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         section {
             padding: 60px 0;
         }
-        
+
         h2 {
             font-size: 32px;
             text-align: center;
             margin-bottom: 40px;
             color: #2c3e50;
         }
-        
+
         h3 {
             font-size: 24px;
             margin-bottom: 20px;
             color: #2c3e50;
         }
-        
+
         .section-subtitle {
             text-align: center;
             margin-bottom: 30px;
             font-size: 18px;
         }
-        
+
         /* ヘッダー */
         header {
             background-color: #fff;
@@ -60,43 +61,43 @@
             width: 100%;
             z-index: 1000;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
         }
-        
+
         .logo {
             font-size: 24px;
             font-weight: bold;
             color: #3498db;
             white-space: nowrap;
         }
-        
+
         .logo span {
             color: #e74c3c;
         }
-        
+
         .nav-menu {
             display: flex;
         }
-        
+
         .nav-menu li {
             list-style: none;
             margin-left: 30px;
         }
-        
+
         .nav-menu a {
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         .nav-menu a:hover {
             color: #3498db;
         }
-        
+
         .cta-button {
             background-color: #e74c3c;
             color: white;
@@ -107,38 +108,38 @@
             white-space: nowrap;
             font-size: 14px;
         }
-        
+
         .cta-button:hover {
             background-color: #c0392b;
         }
-        
+
         /* メインビジュアル */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/api/placeholder/1200/600') center/cover;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('images/top-image.jpg') center/cover;
             color: white;
             text-align: center;
             padding-top: 80px;
         }
-        
+
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
             font-size: 48px;
             margin-bottom: 20px;
             line-height: 1.2;
         }
-        
+
         .hero p {
             font-size: 20px;
             margin-bottom: 40px;
         }
-        
+
         .big-cta-button {
             background-color: #e74c3c;
             color: white;
@@ -149,24 +150,24 @@
             display: inline-block;
             transition: background-color 0.3s, transform 0.3s;
         }
-        
+
         .big-cta-button:hover {
             background-color: #c0392b;
             transform: scale(1.05);
         }
-        
+
         /* 特徴セクション */
         .features {
             background-color: #f9f9f9;
         }
-        
+
         .feature-box {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             gap: 30px;
         }
-        
+
         .feature-item {
             flex: 1 1 280px;
             background-color: white;
@@ -176,33 +177,33 @@
             text-align: center;
             transition: transform 0.3s;
         }
-        
+
         .feature-item:hover {
             transform: translateY(-10px);
         }
-        
+
         .feature-icon {
             font-size: 48px;
             color: #3498db;
             margin-bottom: 20px;
         }
-        
+
         .feature-item h3 {
             margin-bottom: 15px;
         }
-        
+
         /* サービスの流れ */
         .flow-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .flow-step {
             display: flex;
             margin-bottom: 40px;
             position: relative;
         }
-        
+
         .flow-step:not(:last-child):after {
             content: '';
             position: absolute;
@@ -212,7 +213,7 @@
             top: 48px;
             bottom: -40px;
         }
-        
+
         .step-number {
             width: 48px;
             height: 48px;
@@ -226,7 +227,7 @@
             font-weight: bold;
             flex-shrink: 0;
         }
-        
+
         .step-content {
             margin-left: 30px;
             background-color: white;
@@ -235,19 +236,19 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             flex-grow: 1;
         }
-        
+
         /* 料金プラン */
         .pricing {
             background-color: #f9f9f9;
         }
-        
+
         .price-cards {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
         }
-        
+
         .price-card {
             background-color: white;
             border-radius: 10px;
@@ -257,56 +258,56 @@
             max-width: 350px;
             text-align: center;
         }
-        
+
         .price-card.featured {
             border: 2px solid #3498db;
             transform: scale(1.05);
         }
-        
+
         .price-tag {
             font-size: 36px;
             font-weight: bold;
             color: #e74c3c;
             margin: 20px 0;
         }
-        
+
         .price-tag span {
             font-size: 18px;
             color: #7f8c8d;
         }
-        
+
         .price-features {
             margin: 30px 0;
             text-align: left;
         }
-        
+
         .price-features li {
             margin-bottom: 10px;
             list-style: none;
             position: relative;
             padding-left: 25px;
         }
-        
+
         .price-features li:before {
             content: '✓';
             color: #3498db;
             position: absolute;
             left: 0;
         }
-        
+
         /* FAQ */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .faq-item {
             margin-bottom: 20px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
-        
+
         .faq-question {
             background-color: #f5f5f5;
             padding: 20px;
@@ -314,7 +315,7 @@
             cursor: pointer;
             position: relative;
         }
-        
+
         .faq-question:after {
             content: '+';
             position: absolute;
@@ -323,33 +324,33 @@
             transform: translateY(-50%);
             font-size: 20px;
         }
-        
+
         .faq-answer {
             padding: 20px;
             background-color: white;
             display: none;
         }
-        
+
         .faq-item.active .faq-question:after {
             content: '-';
         }
-        
+
         .faq-item.active .faq-answer {
             display: block;
         }
-        
+
         /* お客様の声 */
         .testimonials {
             background-color: #f9f9f9;
         }
-        
+
         .testimonial-container {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
             justify-content: center;
         }
-        
+
         .testimonial-item {
             background-color: white;
             padding: 30px;
@@ -359,16 +360,16 @@
             max-width: 350px;
             position: relative;
         }
-        
+
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
         }
-        
+
         .testimonial-author {
             font-weight: bold;
         }
-        
+
         .testimonial-item:before {
             content: '❝';
             font-size: 48px;
@@ -377,7 +378,7 @@
             top: 10px;
             left: 20px;
         }
-        
+
         /* お問い合わせ */
         .contact-container {
             display: flex;
@@ -386,47 +387,49 @@
             max-width: 1000px;
             margin: 0 auto;
         }
-        
+
         .contact-info {
             flex: 1 1 300px;
         }
-        
+
         .contact-method {
             margin-bottom: 30px;
         }
-        
+
         .contact-method h3 {
             display: flex;
             align-items: center;
         }
-        
+
         .contact-method h3 i {
             margin-right: 10px;
             color: #3498db;
         }
-        
+
         .contact-form {
             flex: 1 1 500px;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
         }
-        
-        input, textarea, select {
+
+        input,
+        textarea,
+        select {
             width: 100%;
             padding: 12px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 16px;
         }
-        
+
         button[type="submit"] {
             background-color: #3498db;
             color: white;
@@ -437,54 +440,54 @@
             cursor: pointer;
             transition: background-color 0.3s;
         }
-        
+
         button[type="submit"]:hover {
             background-color: #2980b9;
         }
-        
+
         /* フッター */
         footer {
             background-color: #2c3e50;
             color: white;
             padding: 60px 0 20px;
         }
-        
+
         .footer-content {
             display: flex;
             flex-wrap: wrap;
             gap: 40px;
             margin-bottom: 40px;
         }
-        
+
         .footer-section {
             flex: 1 1 250px;
         }
-        
+
         .footer-section h3 {
             color: white;
             margin-bottom: 20px;
             font-size: 20px;
         }
-        
+
         .footer-links li {
             margin-bottom: 10px;
             list-style: none;
         }
-        
+
         .footer-links a {
             color: #ecf0f1;
             transition: color 0.3s;
         }
-        
+
         .footer-links a:hover {
             color: #3498db;
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
         }
-        
+
         .social-links a {
             width: 40px;
             height: 40px;
@@ -495,11 +498,11 @@
             border-radius: 50%;
             transition: background-color 0.3s;
         }
-        
+
         .social-links a:hover {
             background-color: #3498db;
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 20px;
@@ -507,46 +510,46 @@
             font-size: 14px;
             color: rgba(255, 255, 255, 0.6);
         }
-        
+
         /* レスポンシブデザイン */
         @media (max-width: 768px) {
             .nav-menu {
                 display: none;
             }
-            
+
             .hero h1 {
                 font-size: 32px;
             }
-            
+
             .hero p {
                 font-size: 18px;
             }
-            
+
             section {
                 padding: 40px 0;
             }
-            
+
             h2 {
                 font-size: 28px;
             }
-            
+
             .price-card.featured {
                 transform: none;
             }
-            
+
             .header-content {
                 padding: 10px 15px;
             }
-            
+
             .logo {
                 font-size: 20px;
             }
-            
+
             .cta-button {
                 padding: 8px 12px;
                 font-size: 12px;
             }
-            
+
             .big-cta-button {
                 font-size: 16px;
                 padding: 12px 30px;
@@ -554,6 +557,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- ヘッダー -->
     <header>
@@ -578,7 +582,7 @@
             <div class="hero-content">
                 <h1>あなたの退職、私たちが代行します</h1>
                 <p>辞めにくい職場、言い出せない退職の意思。その不安とストレスから解放されるための、確実な一歩をサポートします。</p>
-                <a href="#contact" class="big-cta-button">正社員 20,000円〜（税込）</a>
+                <a href="#pricing" class="big-cta-button">正社員 20,000円〜（税込）</a>
             </div>
         </div>
     </section>
@@ -685,10 +689,8 @@
                         <li>会社への退職意思連絡</li>
                         <li>退職日の調整</li>
                         <li>有給休暇消化の調整</li>
-                        <li>退職金・未払い金の請求サポート</li>
                         <li>退職後の必要書類受け取り</li>
                         <li>LINEによるサポート</li>
-                        <li>電話サポート（平日9時〜18時）</li>
                     </ul>
                     <a href="#contact" class="cta-button">このプランで申し込む</a>
                 </div>
@@ -710,7 +712,8 @@
                 <div class="faq-item">
                     <div class="faq-question">退職日はどのように決まりますか？</div>
                     <div class="faq-answer">
-                        <p>労働基準法では「2週間前までに申し出れば退職できる」と定められていますが、会社の就業規則によって1ヶ月前などと定められていることもあります。お客様の希望と会社の規則を考慮した上で、最適な退職日をお伝えします。</p>
+                        <p>労働基準法では「2週間前までに申し出れば退職できる」と定められていますが、会社の就業規則によって1ヶ月前などと定められていることもあります。お客様の希望と会社の規則を考慮した上で、最適な退職日をお伝えします。
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -728,7 +731,8 @@
                 <div class="faq-item">
                     <div class="faq-question">退職代行を利用するとブラックリストに載りますか？</div>
                     <div class="faq-answer">
-                        <p>「退職者のブラックリスト」というものは法的に存在せず、そのような情報共有は個人情報保護法に抵触する可能性があります。当社は穏便に退職できるよう交渉するため、次の就職活動に影響が出ることはありません。</p>
+                        <p>「退職者のブラックリスト」というものは法的に存在せず、そのような情報共有は個人情報保護法に抵触する可能性があります。当社は穏便に退職できるよう交渉するため、次の就職活動に影響が出ることはありません。
+                        </p>
                     </div>
                 </div>
             </div>
@@ -819,11 +823,11 @@
                 <div class="footer-section">
                     <h3>退職代行リブワク</h3>
                     <p>あなたの新しい人生の一歩を、安心してスタートするためのサポートを提供します。</p>
-                    <div class="social-links">
+                    <!-- <div class="social-links">
                         <a href="#"><span>X</span></a>
                         <a href="#"><span>FB</span></a>
                         <a href="#"><span>IG</span></a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="footer-section">
                     <h3>サービス</h3>
@@ -852,16 +856,16 @@
 
     <script>
         // FAQ開閉の簡易スクリプト
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const faqItems = document.querySelectorAll('.faq-item');
-            
+
             faqItems.forEach(item => {
                 const question = item.querySelector('.faq-question');
-                
+
                 question.addEventListener('click', () => {
                     // 現在の項目の開閉を切り替え
                     item.classList.toggle('active');
-                    
+
                     // 他の項目を閉じる場合はこのコメントを解除
                     // faqItems.forEach(otherItem => {
                     //     if(otherItem !== item) {
@@ -871,21 +875,21 @@
                 });
             });
         });
-        
+
         // スムーススクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
-                
-                if(targetId === '#') return;
-                
+
+                if (targetId === '#') return;
+
                 const targetElement = document.querySelector(targetId);
-                const headerOffset = 80;
+                const headerOffset = 60;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                
+
                 window.scrollTo({
                     top: offsetPosition,
                     behavior: 'smooth'
@@ -894,4 +898,5 @@
         });
     </script>
 </body>
+
 </html>
