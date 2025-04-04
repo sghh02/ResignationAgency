@@ -3,403 +3,895 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>退職代行サービスの比較と民間企業の法的限界に関する詳細調査報告</title>
+    <title>退職代行リブワク | あなたの新しい一歩を応援します</title>
     <style>
-        body {
+        /* 全体のスタイル */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f9f9f9;
         }
-        h1 {
-            color: #1a1a1a;
-            font-size: 28px;
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .section-subtitle {
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #4285f4;
+            font-size: 18px;
         }
-        h2 {
-            color: #2c3e50;
-            font-size: 24px;
-            margin-top: 40px;
-            padding-left: 10px;
-            border-left: 5px solid #4285f4;
-        }
-        h3 {
-            color: #34495e;
-            font-size: 20px;
-            margin-top: 25px;
-        }
-        p {
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
-        }
-        th, td {
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-        th {
-            background-color: #4285f4;
-            color: white;
-            font-weight: bold;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        .toc {
+        
+        /* ヘッダー */
+        header {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
         }
-        .toc h2 {
-            margin-top: 0;
-            border-left: none;
-            border-bottom: 2px solid #4285f4;
-            padding-left: 0;
-            padding-bottom: 10px;
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
-        .toc ul {
-            list-style-type: none;
-            padding-left: 0;
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            white-space: nowrap;
         }
-        .toc ul ul {
-            padding-left: 20px;
+        
+        .logo span {
+            color: #e74c3c;
         }
-        .toc li {
-            margin-bottom: 8px;
+        
+        .nav-menu {
+            display: flex;
         }
-        .toc a {
-            text-decoration: none;
-            color: #4285f4;
+        
+        .nav-menu li {
+            list-style: none;
+            margin-left: 30px;
         }
-        .toc a:hover {
-            text-decoration: underline;
+        
+        .nav-menu a {
+            font-weight: 500;
+            transition: color 0.3s;
         }
-        .circle-o {
-            color: #4caf50;
+        
+        .nav-menu a:hover {
+            color: #3498db;
         }
-        .times {
-            color: #f44336;
+        
+        .cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            font-size: 14px;
         }
-        .warning {
-            background-color: #fff8e1;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
+        
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+        
+        /* メインビジュアル */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('/api/placeholder/1200/600') center/cover;
+            color: white;
+            text-align: center;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .big-cta-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .big-cta-button:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        /* 特徴セクション */
+        .features {
+            background-color: #f9f9f9;
+        }
+        
+        .feature-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        
+        .feature-item {
+            flex: 1 1 280px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            color: #3498db;
             margin-bottom: 20px;
         }
-        .section {
+        
+        .feature-item h3 {
+            margin-bottom: 15px;
+        }
+        
+        /* サービスの流れ */
+        .flow-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .flow-step {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .flow-step:not(:last-child):after {
+            content: '';
+            position: absolute;
+            width: 0;
+            border-left: 2px dashed #3498db;
+            left: 24px;
+            top: 48px;
+            bottom: -40px;
+        }
+        
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background-color: #3498db;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            margin-left: 30px;
             background-color: white;
-            padding: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex-grow: 1;
+        }
+        
+        /* 料金プラン */
+        .pricing {
+            background-color: #f9f9f9;
+        }
+        
+        .price-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .price-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1 1 300px;
+            max-width: 350px;
+            text-align: center;
+        }
+        
+        .price-card.featured {
+            border: 2px solid #3498db;
+            transform: scale(1.05);
+        }
+        
+        .price-tag {
+            font-size: 36px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin: 20px 0;
+        }
+        
+        .price-tag span {
+            font-size: 18px;
+            color: #7f8c8d;
+        }
+        
+        .price-features {
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .price-features li {
+            margin-bottom: 10px;
+            list-style: none;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .price-features li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            background-color: #f5f5f5;
+            padding: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .faq-question:after {
+            content: '+';
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+        
+        .faq-answer {
+            padding: 20px;
+            background-color: white;
+            display: none;
+        }
+        
+        .faq-item.active .faq-question:after {
+            content: '-';
+        }
+        
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        
+        /* お客様の声 */
+        .testimonials {
+            background-color: #f9f9f9;
+        }
+        
+        .testimonial-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        
+        .testimonial-item {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            flex: 1 1 300px;
+            max-width: 350px;
+            position: relative;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+        }
+        
+        .testimonial-item:before {
+            content: '❝';
+            font-size: 48px;
+            color: rgba(52, 152, 219, 0.2);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+        
+        /* お問い合わせ */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            flex: 1 1 300px;
+        }
+        
+        .contact-method {
             margin-bottom: 30px;
+        }
+        
+        .contact-method h3 {
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-method h3 i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+        
+        .contact-form {
+            flex: 1 1 500px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+        
+        button[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        
+        /* フッター */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section {
+            flex: 1 1 250px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #ecf0f1;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: #3498db;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: background-color 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .price-card.featured {
+                transform: none;
+            }
+            
+            .header-content {
+                padding: 10px 15px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .cta-button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .big-cta-button {
+                font-size: 16px;
+                padding: 12px 30px;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>退職代行サービスの比較と民間企業の法的限界に関する詳細調査報告</h1>
-    
-    <div class="toc">
-        <h2>目次</h2>
-        <ul>
-            <li><a href="#intro">1. はじめに</a></li>
-            <li><a href="#comparison">2. 各種退職代行サービスの比較</a>
-                <ul>
-                    <li><a href="#private">2.1. 民間企業の退職代行サービス</a></li>
-                    <li><a href="#union">2.2. 労働組合の退職代行サービス</a></li>
-                    <li><a href="#lawyer">2.3. 弁護士事務所の退職代行サービス</a></li>
+    <!-- ヘッダー -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">退職代行<span>リブワク</span></a>
+                <ul class="nav-menu">
+                    <li><a href="#service">サービス内容</a></li>
+                    <li><a href="#flow">サービスの流れ</a></li>
+                    <li><a href="#pricing">料金プラン</a></li>
+                    <li><a href="#faq">よくある質問</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
-            </li>
-            <li><a href="#legal-limits">3. 民間企業の退職代行サービスにおける法的な限界</a></li>
-            <li><a href="#suitable-cases">4. 民間企業の退職代行サービスが適しているケースと適していないケース</a></li>
-            <li><a href="#user-needs">5. ユーザーが退職代行に求めていること</a></li>
-            <li><a href="#process">6. 一般的な民間企業の退職代行サービスの流れ</a></li>
-            <li><a href="#considerations">7. 民間企業の退職代行サービスの選択における考慮事項</a></li>
-            <li><a href="#kawasaki">8. 川崎市、神奈川県内の退職代行サービス</a></li>
-            <li><a href="#legal-trends">9. 退職代行サービスに関する最新の判例と労働関連の法改正</a></li>
-            <li><a href="#conclusion">10. 結論</a></li>
-        </ul>
-    </div>
-
-    <div id="intro" class="section">
-        <h2>1. はじめに</h2>
-        <p>近年、日本において、従業員が自ら退職を申し出るのではなく、第三者にその手続きを代行してもらう「退職代行サービス」の利用が拡大しています。特に、20代や30代の若い世代を中心に認知度が高く、実際にサービスを利用した経験のある人の割合も増加傾向にあります。</p>
-        <p>この背景には、従来の終身雇用制度の変化や、職場環境における多様な課題、そして従業員がよりスムーズかつ精神的な負担を軽減した形で退職したいというニーズの高まりが考えられます。</p>
-        <p>退職代行サービスを提供する主体は、民間企業、労働組合、弁護士事務所と多岐にわたります。それぞれの事業者は、法的根拠や専門性、提供するサービス内容において明確な違いを有しており、利用を検討する際には、これらの違いを十分に理解することが不可欠です。</p>
-        <p>本報告書では、これらの3つのタイプの退職代行サービスについて詳細に比較分析し、特に民間企業が提供するサービスの法的限界、利用が適しているケースとそうでないケース、利用者のニーズ、サービスの流れ、そして選択する際の考慮事項について深く掘り下げていきます。また、川崎市および神奈川県内における主なサービス提供者の情報や、退職代行サービスに関する最新の法的動向についても考察します。</p>
-    </div>
-
-    <div id="comparison" class="section">
-        <h2>2. 各種退職代行サービスの比較</h2>
-        <p>退職代行サービスは、運営主体によって提供できるサービス範囲が大きく異なります。以下に、民間企業、労働組合、弁護士事務所それぞれの特徴を比較します。</p>
-
-        <div id="private">
-            <h3>2.1. 民間企業の退職代行サービス</h3>
-            <p>民間企業が提供する退職代行サービスの主な機能は、<strong>依頼者の退職意思を会社に伝達すること</strong>です。これは、法律的な交渉権限を持たない民間企業が適法に実施できる範囲内でのサービス提供となります。</p>
-            <p>民間企業には、会社との交渉を行う法的権限がありません。たとえ「弁護士監修」と謳っている場合でも、それはサービス内容が法律に抵触しないかを確認しているに過ぎず、交渉権限が付与されるわけではありません。したがって、退職日の調整、有給休暇の取得、未払い賃金や退職金の請求といった交渉が必要な場合には、民間企業のサービスだけでは対応が難しいのが現状です。</p>
-            <p>また、民間企業は、パワハラやセクハラに関する訴訟、懲戒解雇への異議申し立てなど、法的な手続きや代理人としての活動を行うことはできません。これらの対応は、弁護士のみに認められています。</p>
+                <a href="#contact" class="cta-button">無料相談はこちら</a>
+            </div>
         </div>
+    </header>
 
-        <div id="union">
-            <h3>2.2. 労働組合の退職代行サービス</h3>
-            <p>労働組合は、日本国憲法第28条で保障された<strong>団体交渉権</strong>を有しており、これに基づいて会社と交渉を行うことができます。この団体交渉権を活用することで、退職の意思伝達だけでなく、有給休暇の取得、未払い賃金や残業代の請求、退職日の調整など、多岐にわたる交渉が可能となります。</p>
-            <p>労働組合は、民間企業とは異なり、会社に対して法的な根拠をもって交渉を進めることができるため、より有利な条件で退職できる可能性があります。しかし、弁護士資格がないため、訴訟や法的な手続きを伴う対応、例えば損害賠償請求や懲戒解雇に関する争議などについては、その範疇を超えるため対応することはできません。</p>
+    <!-- メインビジュアル -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>あなたの退職、私たちが代行します</h1>
+                <p>辞めにくい職場、言い出せない退職の意思。その不安とストレスから解放されるための、確実な一歩をサポートします。</p>
+                <a href="#contact" class="big-cta-button">正社員 20,000円〜（税込）</a>
+            </div>
         </div>
+    </section>
 
-        <div id="lawyer">
-            <h3>2.3. 弁護士事務所の退職代行サービス</h3>
-            <p>弁護士は、法律の専門家として、退職に関するあらゆる交渉を依頼者の代理として行うことができます。これには、退職日の調整、有給休暇の取得、未払い給与や残業代、退職金の請求などが含まれます。</p>
-            <p>弁護士は、交渉だけでなく、万が一会社との間で法的なトラブルが発生した場合（例えば、不当解雇や損害賠償請求など）には、依頼者の代理人として訴訟手続きを含むあらゆる法的対応を行うことが可能です。また、パワハラやセクハラに対する慰謝料請求など、専門的な法的知識が必要となる問題にも対応できます。</p>
+    <!-- 特徴セクション -->
+    <section class="features" id="service">
+        <div class="container">
+            <h2>リブワクの特徴</h2>
+            <p class="section-subtitle">退職代行リブワクが選ばれる3つの理由</p>
+            <div class="feature-box">
+                <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <h3>即日対応可能</h3>
+                    <p>お申し込み後、最短即日で会社へ連絡。急な退職希望にも柔軟に対応します。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3>プライバシー徹底保護</h3>
+                    <p>あなたの個人情報は厳重に管理。会社側にも必要最小限の情報のみ伝えます。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">💼</div>
+                    <h3>退職後のサポート</h3>
+                    <p>退職後の各種手続きや次のステップに関するアドバイスも提供します。</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>サービス内容</th>
-                    <th>民間退職代行業者</th>
-                    <th>労働組合</th>
-                    <th>弁護士事務所</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>退職意思の伝達</td>
-                    <td class="circle-o">〇</td>
-                    <td class="circle-o">〇</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>退職日の交渉</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>有給休暇取得の交渉</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>未払い賃金・退職金の請求</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>ハラスメントに関する交渉</td>
-                    <td class="times">×</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>懲戒解雇に関する争議</td>
-                    <td class="times">×</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>損害賠償請求への対応</td>
-                    <td class="times">×</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>裁判における代理人</td>
-                    <td class="times">×</td>
-                    <td class="times">×</td>
-                    <td class="circle-o">〇</td>
-                </tr>
-                <tr>
-                    <td>費用</td>
-                    <td>低</td>
-                    <td>中</td>
-                    <td>高</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <!-- サービスの流れ -->
+    <section class="flow" id="flow">
+        <div class="container">
+            <h2>サービスの流れ</h2>
+            <p class="section-subtitle">退職までの4つのステップ</p>
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>お申し込み・相談</h3>
+                        <p>LINEまたはお問い合わせフォームからご連絡ください。基本情報と退職希望日をお伺いします。24時間受付中です。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>ご契約・お支払い</h3>
+                        <p>サービス内容にご納得いただけましたら、契約に進みます。クレジットカードまたは銀行振込でお支払いください。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>会社への連絡</h3>
+                        <p>当社スタッフが会社の人事担当者へ連絡し、退職の意思を伝えます。その後のやり取りも全て当社が行います。</p>
+                    </div>
+                </div>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>退職完了・アフターフォロー</h3>
+                        <p>退職手続きが完了後、必要書類の受け取り方法や社会保険・年金の手続きなど、その後のサポートも行います。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="legal-limits" class="section">
-        <h2>3. 民間企業の退職代行サービスにおける法的な限界</h2>
-        <p>民間企業が提供する退職代行サービスは、弁護士法によって厳しく制限されています。弁護士法第72条は、弁護士または弁護士法人でない者が、報酬を得る目的で法律事務を行うことを禁じており、これを「非弁行為（ひべんこうい）」と呼びます。</p>
-        <ul>
-            <li><strong>交渉行為の禁止</strong>: 民間企業は、依頼者の代わりに会社と退職条件について交渉することは、非弁行為に該当する可能性が極めて高いとされています。これは、退職日、有給休暇の取得、未払い賃金や退職金の請求など、具体的な条件について会社と協議し、合意を目指す行為全般を指します。</li>
-            <li><strong>法律判断・法的助言の禁止</strong>: 民間企業が、退職に関する法的判断を示したり、法律的な助言を行うことも、弁護士法に抵触する可能性があります。例えば、「民法第〇条に基づき、〇〇を請求できます」といった具体的な法的根拠を示す行為は、弁護士の業務範囲とみなされます。</li>
-            <li><strong>裁判手続き・法的代理の禁止</strong>: 当然のことながら、民間企業は、労働審判や訴訟などの法的手続きを代行したり、依頼者の代理人として裁判所に出廷したりすることは一切できません。</li>
-            <li><strong>懲戒解雇に関する争議</strong>: 懲戒解雇は、その有効性や手続きに法的判断が伴うため、民間企業がこれに関する争議を扱うことはできません。このようなケースでは、弁護士による専門的な対応が必要となります。</li>
-        </ul>
-        <p>民間企業がこれらの法的限界を超えてサービスを提供した場合、非弁行為として刑事罰の対象となる可能性があります。また、非弁行為を理由に会社が退職代行業者からの連絡や交渉を拒否する可能性も考えられます。</p>
-    </div>
+    <!-- 料金プラン -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2>料金プラン</h2>
+            <p class="section-subtitle">雇用形態別の明確な料金体系</p>
+            <div class="price-cards">
+                <div class="price-card">
+                    <h3>パート・アルバイト</h3>
+                    <div class="price-tag">10,000円<span>（税込）</span></div>
+                    <p>パートやアルバイトの方向け</p>
+                    <ul class="price-features">
+                        <li>会社への退職意思連絡</li>
+                        <li>退職日の調整</li>
+                        <li>退職後の必要書類受け取り</li>
+                        <li>LINEによるサポート</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">このプランで申し込む</a>
+                </div>
+                <div class="price-card">
+                    <h3>契約・派遣社員</h3>
+                    <div class="price-tag">15,000円<span>（税込）</span></div>
+                    <p>契約社員や派遣社員の方向け</p>
+                    <ul class="price-features">
+                        <li>会社への退職意思連絡</li>
+                        <li>退職日の調整</li>
+                        <li>有給休暇消化の調整</li>
+                        <li>退職後の必要書類受け取り</li>
+                        <li>LINEによるサポート</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">このプランで申し込む</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>正社員</h3>
+                    <div class="price-tag">20,000円<span>（税込）</span></div>
+                    <p>正社員の方向け</p>
+                    <ul class="price-features">
+                        <li>会社への退職意思連絡</li>
+                        <li>退職日の調整</li>
+                        <li>有給休暇消化の調整</li>
+                        <li>退職金・未払い金の請求サポート</li>
+                        <li>退職後の必要書類受け取り</li>
+                        <li>LINEによるサポート</li>
+                        <li>電話サポート（平日9時〜18時）</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">このプランで申し込む</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="suitable-cases" class="section">
-        <h2>4. 民間企業の退職代行サービスが適しているケースと適していないケース</h2>
-        <p>民間企業の退職代行サービスは、その法的限界から、特定の状況下での利用に適しています。</p>
+    <!-- よくある質問 -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>よくある質問</h2>
+            <div class="faq-container">
+                <div class="faq-item active">
+                    <div class="faq-question">退職代行を利用すると会社に知られることはありますか？</div>
+                    <div class="faq-answer">
+                        <p>退職の意思表示自体は会社に伝える必要がありますが、退職代行サービスを利用していることを明かす必要はありません。当社からは「代理人」として連絡するため、プライバシーは守られます。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">退職日はどのように決まりますか？</div>
+                    <div class="faq-answer">
+                        <p>労働基準法では「2週間前までに申し出れば退職できる」と定められていますが、会社の就業規則によって1ヶ月前などと定められていることもあります。お客様の希望と会社の規則を考慮した上で、最適な退職日をお伝えします。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">有給休暇の消化は可能ですか？</div>
+                    <div class="faq-answer">
+                        <p>有給休暇は法律で保障された権利です。当社では有給休暇を使った退職プランをご提案し、会社側と調整いたします。ただし、会社の状況によっては全ての有給消化が難しい場合もあります。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">即日退職は可能ですか？</div>
+                    <div class="faq-answer">
+                        <p>即日退職も可能です。ただし、法律上は原則として2週間前の申し出が必要なため、その期間の給与が支払われない可能性があります。詳細な条件についてはご相談ください。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">退職代行を利用するとブラックリストに載りますか？</div>
+                    <div class="faq-answer">
+                        <p>「退職者のブラックリスト」というものは法的に存在せず、そのような情報共有は個人情報保護法に抵触する可能性があります。当社は穏便に退職できるよう交渉するため、次の就職活動に影響が出ることはありません。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>適しているケース:</h3>
-        <ul>
-            <li><strong>退職の意思を伝えるだけで良い場合</strong>: 会社との間に特に交渉が必要な事項がなく、単に退職の意思を会社に伝えてもらえれば良いという場合に適しています。例えば、すでに退職について上司と合意済みであるものの、直接伝えるのが気まずい、または事務的な手続きを代行してほしいといったケースです。</li>
-            <li><strong>円満退職が見込まれる場合</strong>: 会社が退職をスムーズに受け入れてくれる可能性が高く、特に揉める要素がない場合に、費用を抑えて退職手続きを進めたい場合に有効です。</li>
-            <li><strong>精神的な負担を軽減したい場合</strong>: 上司や同僚に退職を伝えることに強い心理的な抵抗がある場合、第三者が介入することで精神的な負担を軽減できます。</li>
-        </ul>
+    <!-- お客様の声 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>お客様の声</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        上司からのパワハラに悩んでいましたが、直接伝えるのが怖くて…。リブワクさんに依頼してからはすべてスムーズに進み、精神的な負担なく退職できました。
+                    </div>
+                    <div class="testimonial-author">30代女性・事務職</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        忙しい時期で退職を言い出せずにいましたが、代行してもらうことで円満に退職できました。有給も使えて次の仕事の準備期間も取れて感謝しています。
+                    </div>
+                    <div class="testimonial-author">20代男性・IT業界</div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="testimonial-text">
+                        長時間労働で体調を崩していたところ、即日対応してもらえて本当に助かりました。退職後の手続きについてもアドバイスをもらえて心強かったです。
+                    </div>
+                    <div class="testimonial-author">40代女性・サービス業</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>適していないケース:</h3>
-        <ul>
-            <li><strong>会社との交渉が必要な場合</strong>: 退職日、有給休暇の取得、未払い賃金や残業代、退職金の請求など、会社と何らかの条件交渉が必要な場合には、労働組合または弁護士事務所の利用を検討すべきです。</li>
-            <li><strong>法的なトラブルが予想される場合</strong>: パワハラ、セクハラ、不当解雇、退職勧奨など、会社との間で法的な紛争が生じる可能性が高い場合には、弁護士事務所に依頼するべきです。</li>
-            <li><strong>会社から損害賠償請求される可能性がある場合</strong>: 業務上の過失や契約違反などにより、会社から損害賠償請求を受ける可能性がある場合も、弁護士に相談し、適切な対応を検討する必要があります。</li>
-            <li><strong>退職を強硬に拒否されている場合</strong>: 会社が従業員の退職を強く拒否している場合、民間企業の退職代行だけでは解決が難しいことがあります。労働組合の団体交渉権や弁護士の法的交渉力が必要となる可能性が高いです。</li>
-        </ul>
-    </div>
+    <!-- お問い合わせ -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>無料相談・お問い合わせ</h2>
+            <p class="section-subtitle">24時間受付中・LINEで簡単相談</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-method">
+                        <h3>LINE</h3>
+                        <p>友達追加後、トーク画面からご相談ください。最も早く対応可能です。</p>
+                        <div style="margin-top: 15px;">
+                            <a href="#" class="cta-button">LINE友達追加</a>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="icon">📞</i> 電話</h3>
+                        <p>平日10:00〜19:00</p>
+                        <p><strong>0120-XXX-XXX</strong></p>
+                    </div>
+                    <div class="contact-method">
+                        <h3><i class="icon">📧</i> メール</h3>
+                        <p>24時間受付中・原則24時間以内に返信</p>
+                        <p><strong>info@reworks.co.jp</strong></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">お名前 <span style="color: #e74c3c;">*</span></label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス <span style="color: #e74c3c;">*</span></label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">電話番号</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">お問い合わせ内容 <span style="color: #e74c3c;">*</span></label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div id="user-needs" class="section">
-        <h2>5. ユーザーが退職代行に求めていること</h2>
-        <p>退職代行サービスの利用者が最も重視していることは、個々の状況によって異なりますが、いくつかの共通するニーズが見られます。</p>
-        <ul>
-            <li><strong>迅速性</strong>: 多くの利用者は、できるだけ早く退職したいと考えています。特に、現在の職場環境に強い不満やストレスを感じている場合、即日退職を希望するケースも少なくありません。</li>
-            <li><strong>確実性</strong>: 退職の意思を伝えたとしても、会社がなかなか受け入れてくれないのではないかという不安を持つ利用者は多く、確実に退職できることを重視しています。特に、引き止めが強い会社や、過去に退職を申し出ても認められなかった経験のある利用者は、確実性を強く求めます。</li>
-            <li><strong>会社とのトラブル回避</strong>: 退職に伴う会社との直接的なやり取りを避け、できる限り穏便に退職したいというニーズも非常に高いです。特に、上司との関係が悪かったり、パワハラやセクハラを受けていたりする場合には、直接的な接触を避けたいという思いが強くなります。</li>
-            <li><strong>精神的な負担の軽減</strong>: 退職を申し出るという行為自体が、多くの人にとって精神的な負担となるため、それを第三者に代行してもらうことで、心理的なストレスを軽減したいというニーズがあります。</li>
-            <li><strong>費用対効果</strong>: サービスの費用も重要な検討要素であり、特に民間企業の提供する比較的低価格なサービスは、費用対効果を重視する利用者に選ばれる傾向があります。</li>
-        </ul>
-        <p>民間企業の退職代行サービスは、主に迅速性、会社とのトラブル回避、精神的な負担の軽減といったニーズに応えることができます。しかし、確実性や費用対効果については、個々の状況や求めるサービス内容によって、労働組合や弁護士事務所の方が適している場合もあります。</p>
-    </div>
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>退職代行リブワク</h3>
+                    <p>あなたの新しい人生の一歩を、安心してスタートするためのサポートを提供します。</p>
+                    <div class="social-links">
+                        <a href="#"><span>X</span></a>
+                        <a href="#"><span>FB</span></a>
+                        <a href="#"><span>IG</span></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>サービス</h3>
+                    <ul class="footer-links">
+                        <li><a href="#service">サービス内容</a></li>
+                        <li><a href="#flow">サービスの流れ</a></li>
+                        <li><a href="#pricing">料金プラン</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>会社情報</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">特定商取引法に基づく表記</a></li>
+                        <li><a href="#">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 退職代行リブワク All Rights Reserved.
+            </div>
+        </div>
+    </footer>
 
-    <div id="process" class="section">
-        <h2>6. 一般的な民間企業の退職代行サービスの流れ</h2>
-        <p>民間企業の退職代行サービスは、一般的に以下の流れで進められます。</p>
-        <ol>
-            <li><strong>無料相談</strong>: 電話、メール、LINEなどで、退職を希望する状況やサービスの利用に関する相談を行います。多くの業者が24時間対応の無料相談を提供しています。</li>
-            <li><strong>申し込み</strong>: 相談後、サービス内容や費用に納得すれば、正式に申し込みを行います。申し込みはオンラインで完結することがほとんどです。</li>
-            <li><strong>料金支払い</strong>: サービスの料金を支払います。支払い方法は、銀行振込、クレジットカード払い、電子マネーなど、業者によって異なりますが、前払い制が一般的です。</li>
-            <li><strong>ヒアリング</strong>: 退職日、退職理由、会社への連絡希望日時、伝えてほしいこと、貸与品の有無、返却を求める私物の有無、発行してほしい書類など、退職手続きに必要な情報を業者に伝えます。</li>
-            <li><strong>会社への連絡</strong>: 業者が、依頼者に代わって会社の人事担当者や上司に電話などで退職の意思を伝えます。依頼者は、基本的に会社と直接連絡を取る必要はありません。</li>
-            <li><strong>退職手続きの進捗確認と報告</strong>: 業者は、会社とのやり取りや退職手続きの進捗状況を依頼者に報告します。</li>
-            <li><strong>退職届の提出と貸与品の返却</strong>: 会社から指示があった場合、依頼者は退職届を作成し、社員証や健康保険証などの貸与品を郵送などで会社に返却します。</li>
-            <li><strong>退職完了と必要書類の受け取り</strong>: 退職日が確定し、会社から離職票、源泉徴収票、雇用保険被保険者証などの必要書類が郵送されてくることで、退職手続きが完了します。</li>
-            <li><strong>アフターフォロー</strong>: 業者によっては、退職後の転職支援や、会社との間でトラブルが生じた場合の相談など、アフターフォローサービスを提供している場合があります。</li>
-        </ol>
-    </div>
-
-    <div id="considerations" class="section">
-        <h2>7. 民間企業の退職代行サービスの選択における考慮事項</h2>
-        <p>依頼者の状況やニーズに応じて、民間企業の退職代行サービスが適切かどうかを判断し、選択する際には、以下の点を考慮する必要があります。</p>
-        <ul>
-            <li><strong>法的限界の理解</strong>: まず、民間企業には交渉権限や法的代理権がないことを十分に理解しておく必要があります。交渉が必要な場合は、他の選択肢を検討すべきです。</li>
-            <li><strong>非弁行為の可能性の回避</strong>: 交渉や法的な請求を代行すると謳っている民間企業は、非弁行為を行っている可能性があり、利用を避けるべきです。</li>
-            <li><strong>料金とサービス内容の透明性</strong>: 料金体系が明確で、提供されるサービス内容が自身のニーズに合っているかを確認することが重要です。追加料金の有無や、アフターフォローの範囲なども確認しておきましょう。</li>
-            <li><strong>口コミや評判の確認</strong>: 過去の利用者のレビューや評判を参考に、業者の信頼性や実績を確認することが望ましいです。</li>
-            <li><strong>労働組合や弁護士との連携（慎重な評価が必要）</strong>: 弁護士監修や労働組合と連携していると謳う業者もありますが、その実態を慎重に評価する必要があります。単なる監修や連携では、交渉権限や法的代理権は付与されません。</li>
-        </ul>
-    </div>
-
-    <div id="kawasaki" class="section">
-        <h2>8. 川崎市、神奈川県内の退職代行サービス</h2>
-        <p>川崎市および神奈川県内には、様々な退職代行サービスを提供する民間企業、労働組合、弁護士事務所が存在します。</p>
-
-        <h3>民間企業</h3>
-        <p>神奈川県内では、退職代行OITOMA、退職代行Jobs、退職代行ガーディアン、退職代行TORIKESHI、退職代行ニコイチなどが推奨されています。川崎市では、退職代行サービス辞めナイトといったサービスも見られます。これらの民間企業は、比較的安価で迅速な退職手続きの代行を主なサービスとして提供しています。</p>
-
-        <h3>労働組合</h3>
-        <p>退職代行ガーディアン、退職代行OITOMAは、労働組合が運営しており、団体交渉権に基づいた交渉が可能です。また、川崎地域には、全川崎地域労働組合、川崎建設一般労働組合、ミツトヨ労働組合など、様々な業種の労働組合が存在しており、所属している組合員であれば退職に関する相談や支援を受けられる可能性があります。</p>
-
-        <h3>弁護士事務所</h3>
-        <p>神奈川県および川崎市内には、労働問題に注力する多くの弁護士事務所が存在します。弁護士法人みやび、アディーレ法律事務所（川崎支店、横浜支店）、ベリーベスト法律事務所（川崎オフィス、横浜オフィス）、横浜合同法律事務所、かわさき中央法律事務所、栄田法律事務所などが挙げられます。これらの法律事務所は、退職に関する交渉、未払い賃金請求、ハラスメント問題、不当解雇など、あらゆる法的トラブルに対応できます。</p>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>名称</th>
-                    <th>運営主体</th>
-                    <th>主な特徴</th>
-                    <th>連絡先（判明分のみ）</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>退職代行OITOMA</td>
-                    <td>民間（労働組合連携）</td>
-                    <td>神奈川県推奨、労働組合運営、交渉可能、全額返金保証</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>退職代行Jobs</td>
-                    <td>民間（弁護士監修・労働組合連携）</td>
-                    <td>弁護士監修、労働組合連携、信頼性高</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>退職代行ガーディアン</td>
-                    <td>労働組合</td>
-                    <td>神奈川県推奨、労働組合運営、交渉可能、即日退職可能、会社とやり取り不要、退職成功率100%</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>退職代行TORIKESHI</td>
-                    <td>労働組合</td>
-                    <td>LINEで手続き完結、アフターサポート充実</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>退職代行ニコイチ</td>
-                    <td>民間</td>
-                    <td>老舗、実績多数、電話代行可能</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>弁護士法人みやび</td>
-                    <td>弁護士事務所</td>
-                    <td>神奈川県推奨、弁護士運営、裁判対応可能、未払い賃金請求可能</td>
-                    <td>ウェブサイト複数箇所に記載</td>
-                </tr>
-                <tr>
-                    <td>アディーレ法律事務所 川崎支店</td>
-                    <td>弁護士事務所</td>
-                    <td>川崎市所在、「退職代行辞めナイト」提供、無料相談</td>
-                    <td>〒210-0007 神奈川県川崎市川崎区駅前本町１１－１ パシフィックマークス川崎１３Ｆ、電話番号：0120-610-241</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div id="legal-trends" class="section">
-        <h2>9. 退職代行サービスに関する最新の判例と労働関連の法改正</h2>
-        <p>退職代行サービスに関する直接的な法改正は、本報告書作成時点では確認されていませんが、関連する判例や法改正の動向は、サービス内容や利用者の注意点に影響を与える可能性があります。</p>
-
-        <h3>非弁行為に関する判例</h3>
-        <p>2022年3月24日の東京地方裁判所の判例では、退職代行サービスを提供する会社が行った行為が弁護士法72条（非弁行為の禁止）に違反しないと判断されました。この裁判では、サービスの内容が単純な事務作業の代行に留まっており、法律事務に該当するような複雑な業務を行っていなかったことが判断の根拠とされました。この判例は、民間企業が提供できるサービスの範囲を示す一つの指標となります。</p>
-
-        <h3>退職に伴う損害賠償請求に関する判例</h3>
-        <p>退職代行サービスそのものとは直接関係ありませんが、従業員の退職によって会社が損害を被った場合に、会社が従業員に対して損害賠償を請求する事例がいくつか存在します。例えば、引き継ぎを全く行わずに退職し、会社に損害を与えたケースや、競業避止義務に違反して退職後に同業他社で活動し、会社の顧客を奪ったケースなどです。これらの判例は、退職代行サービスを利用した場合でも、退職の仕方によっては従業員が法的責任を問われる可能性があることを示唆しています。</p>
-
-        <h3>労働者の退職の自由に関する原則</h3>
-        <p>民法第627条では、期間の定めのない雇用契約の場合、労働者はいつでも解約の申し入れをすることができ、申し入れから2週間が経過することによって雇用契約は終了すると定められています。この原則は、退職代行サービスを利用した場合でも同様に適用されます。会社が就業規則などで退職の申し出期間を1ヶ月などと定めている場合でも、民法の規定が優先されます。</p>
-
-        <p>これらの法的動向を踏まえると、民間企業の退職代行サービスを利用する際には、そのサービス範囲が法律で認められた範囲内にとどまっているかを確認し、自身が交渉や法的な対応を必要とする場合には、労働組合や弁護士事務所の利用を検討することが重要です。また、退職する際には、会社に不当な損害を与えないよう、社会人としての責任ある行動が求められます。</p>
-    </div>
-
-    <div id="conclusion" class="section">
-        <h2>10. 結論</h2>
-        <p>退職代行サービスは、退職を希望する従業員にとって、様々な状況下で有効な選択肢となり得ます。しかし、その運営主体によってサービス内容や法的権限が大きく異なるため、自身の状況やニーズに最も適したサービスを選ぶことが重要です。</p>
-
-        <p>民間企業の退職代行サービスは、迅速かつ比較的安価に退職の意思を伝達するのに適していますが、交渉や法的な手続きを必要とする場合には限界があります。労働組合は、団体交渉権に基づいた交渉が可能ですが、訴訟などの法的代理は行えません。弁護士事務所は、交渉から法的手続きまで、退職に関するあらゆるサポートを提供できますが、費用は比較的高くなる傾向があります。</p>
-
-        <p>したがって、民間企業の退職代行サービスを選ぶ際には、自身の退職がスムーズに進む可能性が高いか、会社との間に特別な交渉事項がないかなどを慎重に検討する必要があります。もし、退職条件について交渉したい場合や、会社との間で法的なトラブルが予想される場合には、最初から労働組合や弁護士事務所に相談することを強く推奨します。</p>
-
-        <p>川崎市および神奈川県内には、多様な退職代行サービス提供者が存在しており、それぞれの特徴を比較検討することで、自身のニーズに合ったサービスを見つけることができるでしょう。最新の判例や労働関連の法改正動向にも注意を払いながら、適切なサービスを選択し、円満な退職を目指すことが重要です。</p>
-    </div>
+    <script>
+        // FAQ開閉の簡易スクリプト
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // 現在の項目の開閉を切り替え
+                    item.classList.toggle('active');
+                    
+                    // 他の項目を閉じる場合はこのコメントを解除
+                    // faqItems.forEach(otherItem => {
+                    //     if(otherItem !== item) {
+                    //         otherItem.classList.remove('active');
+                    //     }
+                    // });
+                });
+            });
+        });
+        
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                const headerOffset = 80;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
