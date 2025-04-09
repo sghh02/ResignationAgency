@@ -1,902 +1,669 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>退職代行リブワク | あなたの新しい一歩を応援します</title>
+    <title>リブワク - やめる、を、前向きに。</title>
     <style>
-        /* 全体のスタイル */
+        :root {
+            --mint-green: #a8d8be;
+            --light-mint: #d4ebdf;
+            --beige: #f7f5ee;
+            --navy: #2d4356;
+            --dark-gray: #4a4a4a;
+            --light-gray: #f5f5f5;
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', Meiryo, sans-serif;
         }
-
+        
         body {
-            color: #333;
-            line-height: 1.6;
+            color: var(--dark-gray);
+            line-height: 1.7;
+            background-color: #fff;
         }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            font-size: 32px;
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-
-        h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #2c3e50;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 18px;
-        }
-
-        /* ヘッダー */
+        
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: fixed;
             width: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             z-index: 1000;
         }
-
-        .header-content {
+        
+        .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px 20px;
         }
-
+        
         .logo {
             font-size: 24px;
-            font-weight: bold;
-            color: #3498db;
-            white-space: nowrap;
+            font-weight: 600;
+            color: var(--navy);
         }
-
+        
         .logo span {
-            color: #e74c3c;
+            color: var(--mint-green);
         }
-
-        .nav-menu {
+        
+        nav ul {
             display: flex;
-        }
-
-        .nav-menu li {
             list-style: none;
+        }
+        
+        nav ul li {
             margin-left: 30px;
         }
-
-        .nav-menu a {
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-gray);
             font-weight: 500;
             transition: color 0.3s;
         }
-
-        .nav-menu a:hover {
-            color: #3498db;
+        
+        nav ul li a:hover {
+            color: var(--mint-green);
         }
-
-        .cta-button {
-            background-color: #e74c3c;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-            white-space: nowrap;
-            font-size: 14px;
-        }
-
-        .cta-button:hover {
-            background-color: #c0392b;
-        }
-
-        /* メインビジュアル */
+        
         .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('images/top-image.jpg') center/cover;
-            color: white;
+            padding-top: 120px;
+            padding-bottom: 80px;
+            background-color: var(--beige);
             text-align: center;
-            padding-top: 80px;
         }
-
-        .hero-content {
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            color: var(--navy);
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--mint-green);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            margin: 0 10px;
+            box-shadow: 0 3px 10px rgba(168, 216, 190, 0.4);
+        }
+        
+        .btn:hover {
+            background-color: #8ec8a4;
+        }
+        
+        .btn-secondary {
+            background-color: white;
+            color: var(--dark-gray);
+            border: 1px solid var(--light-gray);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--light-gray);
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 28px;
+            color: var(--navy);
+        }
+        
+        .about {
+            background-color: white;
+        }
+        
+        .about-content {
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
-
-        .hero h1 {
-            font-size: 48px;
+        
+        .about-content p {
             margin-bottom: 20px;
-            line-height: 1.2;
+            font-size: 16px;
         }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 40px;
-        }
-
-        .big-cta-button {
-            background-color: #e74c3c;
-            color: white;
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .big-cta-button:hover {
-            background-color: #c0392b;
-            transform: scale(1.05);
-        }
-
-        /* 特徴セクション */
+        
         .features {
-            background-color: #f9f9f9;
+            background-color: var(--light-mint);
         }
-
-        .feature-box {
+        
+        .features-container {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             gap: 30px;
         }
-
-        .feature-item {
-            flex: 1 1 280px;
+        
+        .feature-card {
             background-color: white;
-            border-radius: 10px;
             padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
             transition: transform 0.3s;
         }
-
-        .feature-item:hover {
-            transform: translateY(-10px);
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
         }
-
+        
         .feature-icon {
-            font-size: 48px;
-            color: #3498db;
+            font-size: 40px;
             margin-bottom: 20px;
+            color: var(--mint-green);
         }
-
-        .feature-item h3 {
+        
+        .feature-card h3 {
             margin-bottom: 15px;
-        }
-
-        /* サービスの流れ */
-        .flow-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .flow-step {
-            display: flex;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .flow-step:not(:last-child):after {
-            content: '';
-            position: absolute;
-            width: 0;
-            border-left: 2px dashed #3498db;
-            left: 24px;
-            top: 48px;
-            bottom: -40px;
-        }
-
-        .step-number {
-            width: 48px;
-            height: 48px;
-            background-color: #3498db;
-            border-radius: 50%;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 18px;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .step-content {
-            margin-left: 30px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            flex-grow: 1;
-        }
-
-        /* 料金プラン */
-        .pricing {
-            background-color: #f9f9f9;
-        }
-
-        .price-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .price-card {
-            background-color: white;
-            border-radius: 10px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            flex: 1 1 300px;
-            max-width: 350px;
-            text-align: center;
-        }
-
-        .price-card.featured {
-            border: 2px solid #3498db;
-            transform: scale(1.05);
-        }
-
-        .price-tag {
-            font-size: 36px;
-            font-weight: bold;
-            color: #e74c3c;
-            margin: 20px 0;
-        }
-
-        .price-tag span {
-            font-size: 18px;
-            color: #7f8c8d;
-        }
-
-        .price-features {
-            margin: 30px 0;
-            text-align: left;
-        }
-
-        .price-features li {
-            margin-bottom: 10px;
-            list-style: none;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        .price-features li:before {
-            content: '✓';
-            color: #3498db;
-            position: absolute;
-            left: 0;
-        }
-
-        /* FAQ */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .faq-question {
-            background-color: #f5f5f5;
-            padding: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .faq-question:after {
-            content: '+';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
             font-size: 20px;
+            color: var(--navy);
         }
-
-        .faq-answer {
-            padding: 20px;
+        
+        .process {
             background-color: white;
-            display: none;
         }
-
-        .faq-item.active .faq-question:after {
-            content: '-';
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
-        }
-
-        /* お客様の声 */
-        .testimonials {
-            background-color: #f9f9f9;
-        }
-
-        .testimonial-container {
+        
+        .process-steps {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
             justify-content: center;
-        }
-
-        .testimonial-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            flex: 1 1 300px;
-            max-width: 350px;
-            position: relative;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-
-        .testimonial-author {
-            font-weight: bold;
-        }
-
-        .testimonial-item:before {
-            content: '❝';
-            font-size: 48px;
-            color: rgba(52, 152, 219, 0.2);
-            position: absolute;
-            top: 10px;
-            left: 20px;
-        }
-
-        /* お問い合わせ */
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
             gap: 30px;
             max-width: 1000px;
             margin: 0 auto;
         }
-
-        .contact-info {
-            flex: 1 1 300px;
+        
+        .step-card {
+            background-color: var(--light-gray);
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 200px;
+            max-width: 230px;
+            text-align: center;
+            position: relative;
         }
-
-        .contact-method {
-            margin-bottom: 30px;
-        }
-
-        .contact-method h3 {
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-method h3 i {
-            margin-right: 10px;
-            color: #3498db;
-        }
-
-        .contact-form {
-            flex: 1 1 500px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
-        button[type="submit"] {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button[type="submit"]:hover {
-            background-color: #2980b9;
-        }
-
-        /* フッター */
-        footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 60px 0 20px;
-        }
-
-        .footer-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-section {
-            flex: 1 1 250px;
-        }
-
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 20px;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-            list-style: none;
-        }
-
-        .footer-links a {
-            color: #ecf0f1;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: #3498db;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-links a {
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
+        
+        .step-number {
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--mint-green);
+            color: white;
             border-radius: 50%;
-            transition: background-color 0.3s;
+            margin: 0 auto 20px;
+            font-weight: 600;
         }
-
-        .social-links a:hover {
-            background-color: #3498db;
+        
+        .step-card h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: var(--navy);
         }
-
-        .copyright {
+        
+        .step-card:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: var(--mint-green);
+        }
+        
+        .testimonials {
+            background-color: var(--beige);
+        }
+        
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+            font-weight: 500;
+        }
+        
+        .faq {
+            background-color: white;
+        }
+        
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--light-gray);
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: var(--navy);
+        }
+        
+        .faq-answer {
+            color: var(--dark-gray);
+        }
+        
+        .pricing {
+            background-color: var(--light-mint);
+        }
+        
+        .pricing-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1;
+            min-width: 300px;
+            max-width: 350px;
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.6);
         }
-
-        /* レスポンシブデザイン */
+        
+        .pricing-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--navy);
+        }
+        
+        .pricing-card .price {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--navy);
+        }
+        
+        .pricing-card .price span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .pricing-features {
+            margin-bottom: 30px;
+            min-height: 150px;
+        }
+        
+        .pricing-features li {
+            margin-bottom: 10px;
+            list-style-type: none;
+        }
+        
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--mint-green);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .contact {
+            background-color: var(--beige);
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact p {
+            margin-bottom: 30px;
+        }
+        
+        footer {
+            background-color: var(--navy);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
+            .header-container {
+                flex-direction: column;
+                padding: 10px;
             }
-
+            
+            .logo {
+                margin-bottom: 10px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                padding-top: 150px;
+            }
+            
             .hero h1 {
-                font-size: 32px;
-            }
-
-            .hero p {
-                font-size: 18px;
-            }
-
-            section {
-                padding: 40px 0;
-            }
-
-            h2 {
                 font-size: 28px;
             }
-
-            .price-card.featured {
-                transform: none;
-            }
-
-            .header-content {
-                padding: 10px 15px;
-            }
-
-            .logo {
-                font-size: 20px;
-            }
-
-            .cta-button {
-                padding: 8px 12px;
-                font-size: 12px;
-            }
-
-            .big-cta-button {
+            
+            .hero p {
                 font-size: 16px;
-                padding: 12px 30px;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 80%;
+            }
+            
+            .step-card:not(:last-child)::after {
+                display: none;
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- ヘッダー -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">退職代行<span>リブワク</span></a>
-                <ul class="nav-menu">
-                    <li><a href="#service">サービス内容</a></li>
-                    <li><a href="#flow">サービスの流れ</a></li>
-                    <li><a href="#pricing">料金プラン</a></li>
+        <div class="header-container">
+            <div class="logo">リブ<span>ワク</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">サービス</a></li>
+                    <li><a href="#process">ご利用の流れ</a></li>
+                    <li><a href="#pricing">料金</a></li>
                     <li><a href="#faq">よくある質問</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
                 </ul>
-                <a href="#contact" class="cta-button">無料相談はこちら</a>
-            </div>
+            </nav>
         </div>
     </header>
 
-    <!-- メインビジュアル -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content">
-                <h1>あなたの退職、私たちが代行します</h1>
-                <p>辞めにくい職場、言い出せない退職の意思。その不安とストレスから解放されるための、確実な一歩をサポートします。</p>
-                <a href="#pricing" class="big-cta-button">正社員 20,000円〜（税込）</a>
+            <h1>やめる、を、前向きに。</h1>
+            <p>がまんしない退職を、あなたの代わりに。<br>LINEで簡単・全国対応。</p>
+            <a href="#contact" class="btn">LINEで無料相談</a>
+            <a href="#process" class="btn btn-secondary">サービスの流れを見る</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">リブワクとは？</h2>
+            <div class="about-content">
+                <p>「リブワク」は、働く人が"自分らしい生き方"を取り戻すための、やさしく、しなやかな退職サポートです。</p>
+                <p>もう我慢しない。言えない退職、言いにくい環境、全部リブワクが代わりに引き受けます。</p>
+                <p>「辞めたいけど、怖くて言い出せない」<br>
+                   「精神的に限界。でも会社には行けない」<br>
+                   「もう、とにかく辞めたい」</p>
+                <p>そんなあなたのために、リブワクはやさしい退職の選択肢を提供します。<br>
+                   LINEで気軽に、やりとりはすべてスマホで完結。会社への連絡も、書類のやり取りも、すべて代行いたします。</p>
             </div>
         </div>
     </section>
 
-    <!-- 特徴セクション -->
-    <section class="features" id="service">
+    <section class="features">
         <div class="container">
-            <h2>リブワクの特徴</h2>
-            <p class="section-subtitle">退職代行リブワクが選ばれる3つの理由</p>
-            <div class="feature-box">
-                <div class="feature-item">
-                    <div class="feature-icon">⚡</div>
-                    <h3>即日対応可能</h3>
-                    <p>お申し込み後、最短即日で会社へ連絡。急な退職希望にも柔軟に対応します。</p>
+            <h2 class="section-title">こんな方に選ばれています</h2>
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon">🕊️</div>
+                    <h3>退職の連絡ができず、長く悩んでいる</h3>
+                    <p>どうやって伝えればいいか迷っている方、すべてお任せください。</p>
                 </div>
-                <div class="feature-item">
+                <div class="feature-card">
+                    <div class="feature-icon">🏠</div>
+                    <h3>出社せずに辞めたい</h3>
+                    <p>もう職場に行きたくない。そんな気持ちに寄り添い、出社不要で退職できます。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">😌</div>
+                    <h3>職場に行くのがつらい</h3>
+                    <p>朝が怖い、仕事に行きたくない。そんな気持ちを抱えている方をサポートします。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>引き止めに不安がある</h3>
+                    <p>上司からの引き止めや説得が怖い方、リブワクが窓口となり対応します。</p>
+                </div>
+                <div class="feature-card">
                     <div class="feature-icon">🔒</div>
-                    <h3>プライバシー徹底保護</h3>
-                    <p>あなたの個人情報は厳重に管理。会社側にも必要最小限の情報のみ伝えます。</p>
+                    <h3>家族にバレずに辞めたい</h3>
+                    <p>プライバシーを重視。秘密厳守で対応いたします。</p>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💼</div>
-                    <h3>退職後のサポート</h3>
-                    <p>退職後の各種手続きや次のステップに関するアドバイスも提供します。</p>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>話すのが苦手</h3>
+                    <p>電話ではなく、LINEだけでやりとりできるので安心です。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- サービスの流れ -->
-    <section class="flow" id="flow">
+    <section id="process" class="process">
         <div class="container">
-            <h2>サービスの流れ</h2>
-            <p class="section-subtitle">退職までの4つのステップ</p>
-            <div class="flow-container">
-                <div class="flow-step">
+            <h2 class="section-title">サービスの流れ</h2>
+            <div class="process-steps">
+                <div class="step-card">
                     <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>お申し込み・相談</h3>
-                        <p>LINEまたはお問い合わせフォームからご連絡ください。基本情報と退職希望日をお伺いします。24時間受付中です。</p>
-                    </div>
+                    <h3>LINEで無料相談</h3>
+                    <p>あなたのお悩みを、丁寧にヒアリングします。</p>
                 </div>
-                <div class="flow-step">
+                <div class="step-card">
                     <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>ご契約・お支払い</h3>
-                        <p>サービス内容にご納得いただけましたら、契約に進みます。クレジットカードまたは銀行振込でお支払いください。</p>
-                    </div>
+                    <h3>お申し込み・ご入金</h3>
+                    <p>正式な退職サポートを開始します。</p>
                 </div>
-                <div class="flow-step">
+                <div class="step-card">
                     <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>会社への連絡</h3>
-                        <p>当社スタッフが会社の人事担当者へ連絡し、退職の意思を伝えます。その後のやり取りも全て当社が行います。</p>
-                    </div>
+                    <h3>会社へ連絡・手続き代行</h3>
+                    <p>退職の意思を代行連絡。必要書類の催促も対応。</p>
                 </div>
-                <div class="flow-step">
+                <div class="step-card">
                     <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>退職完了・アフターフォロー</h3>
-                        <p>退職手続きが完了後、必要書類の受け取り方法や社会保険・年金の手続きなど、その後のサポートも行います。</p>
-                    </div>
+                    <h3>退職完了</h3>
+                    <p>書類受け取りなど、円満に退職できます。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 料金プラン -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2>料金プラン</h2>
-            <p class="section-subtitle">雇用形態別の明確な料金体系</p>
-            <div class="price-cards">
-                <div class="price-card">
-                    <h3>パート・アルバイト</h3>
-                    <div class="price-tag">10,000円<span>（税込）</span></div>
-                    <p>パートやアルバイトの方向け</p>
-                    <ul class="price-features">
-                        <li>会社への退職意思連絡</li>
-                        <li>退職日の調整</li>
-                        <li>退職後の必要書類受け取り</li>
-                        <li>LINEによるサポート</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">このプランで申し込む</a>
-                </div>
-                <div class="price-card">
-                    <h3>契約・派遣社員</h3>
-                    <div class="price-tag">15,000円<span>（税込）</span></div>
-                    <p>契約社員や派遣社員の方向け</p>
-                    <ul class="price-features">
-                        <li>会社への退職意思連絡</li>
-                        <li>退職日の調整</li>
-                        <li>有給休暇消化の調整</li>
-                        <li>退職後の必要書類受け取り</li>
-                        <li>LINEによるサポート</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">このプランで申し込む</a>
-                </div>
-                <div class="price-card featured">
-                    <h3>正社員</h3>
-                    <div class="price-tag">20,000円<span>（税込）</span></div>
-                    <p>正社員の方向け</p>
-                    <ul class="price-features">
-                        <li>会社への退職意思連絡</li>
-                        <li>退職日の調整</li>
-                        <li>有給休暇消化の調整</li>
-                        <li>退職後の必要書類受け取り</li>
-                        <li>LINEによるサポート</li>
-                    </ul>
-                    <a href="#contact" class="cta-button">このプランで申し込む</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- よくある質問 -->
-    <section class="faq" id="faq">
-        <div class="container">
-            <h2>よくある質問</h2>
-            <div class="faq-container">
-                <div class="faq-item active">
-                    <div class="faq-question">退職代行を利用すると会社に知られることはありますか？</div>
-                    <div class="faq-answer">
-                        <p>退職の意思表示自体は会社に伝える必要がありますが、退職代行サービスを利用していることを明かす必要はありません。当社からは「代理人」として連絡するため、プライバシーは守られます。</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">退職日はどのように決まりますか？</div>
-                    <div class="faq-answer">
-                        <p>労働基準法では「2週間前までに申し出れば退職できる」と定められていますが、会社の就業規則によって1ヶ月前などと定められていることもあります。お客様の希望と会社の規則を考慮した上で、最適な退職日をお伝えします。
-                        </p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">有給休暇の消化は可能ですか？</div>
-                    <div class="faq-answer">
-                        <p>有給休暇は法律で保障された権利です。当社では有給休暇を使った退職プランをご提案し、会社側と調整いたします。ただし、会社の状況によっては全ての有給消化が難しい場合もあります。</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">即日退職は可能ですか？</div>
-                    <div class="faq-answer">
-                        <p>即日退職も可能です。ただし、法律上は原則として2週間前の申し出が必要なため、その期間の給与が支払われない可能性があります。詳細な条件についてはご相談ください。</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">退職代行を利用するとブラックリストに載りますか？</div>
-                    <div class="faq-answer">
-                        <p>「退職者のブラックリスト」というものは法的に存在せず、そのような情報共有は個人情報保護法に抵触する可能性があります。当社は穏便に退職できるよう交渉するため、次の就職活動に影響が出ることはありません。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- お客様の声 -->
     <section class="testimonials">
         <div class="container">
-            <h2>お客様の声</h2>
+            <h2 class="section-title">ご利用者の声</h2>
             <div class="testimonial-container">
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        上司からのパワハラに悩んでいましたが、直接伝えるのが怖くて…。リブワクさんに依頼してからはすべてスムーズに進み、精神的な負担なく退職できました。
-                    </div>
-                    <div class="testimonial-author">30代女性・事務職</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「本当にLINEだけで退職できて助かりました。引き止められることもなく、スムーズに手続きが進んで安心しました。今は前向きに次の仕事を探しています。」</p>
+                    <p class="testimonial-author">20代 女性</p>
                 </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        忙しい時期で退職を言い出せずにいましたが、代行してもらうことで円満に退職できました。有給も使えて次の仕事の準備期間も取れて感謝しています。
-                    </div>
-                    <div class="testimonial-author">20代男性・IT業界</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「精神的に限界で、出社もままならない状態でした。リブワクさんに相談して本当に良かったです。出社せず退職できて、今は少しずつ前向きに動けています。」</p>
+                    <p class="testimonial-author">30代 男性</p>
                 </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text">
-                        長時間労働で体調を崩していたところ、即日対応してもらえて本当に助かりました。退職後の手続きについてもアドバイスをもらえて心強かったです。
-                    </div>
-                    <div class="testimonial-author">40代女性・サービス業</div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">「上司からの引き止めが怖くて、自分では言い出せませんでした。代わりに連絡してもらえて、心の負担がとても軽くなりました。次の職場ではもっと自分らしく働きたいです。」</p>
+                    <p class="testimonial-author">20代 女性</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- お問い合わせ -->
-    <section class="contact" id="contact">
+    <section id="pricing" class="pricing">
         <div class="container">
-            <h2>無料相談・お問い合わせ</h2>
-            <p class="section-subtitle">24時間受付中・LINEで簡単相談</p>
+            <h2 class="section-title">料金プラン</h2>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>スタンダードプラン</h3>
+                    <div class="price">29,800<span>円（税込）</span></div>
+                    <ul class="pricing-features">
+                        <li>退職の意思表示</li>
+                        <li>会社側との連絡代行</li>
+                        <li>必要書類の請求代行</li>
+                        <li>LINEサポート</li>
+                    </ul>
+                    <a href="#contact" class="btn">申し込む</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>プレミアムプラン</h3>
+                    <div class="price">49,800<span>円（税込）</span></div>
+                    <ul class="pricing-features">
+                        <li>スタンダードプランの全サービス</li>
+                        <li>弁護士監修サポート</li>
+                        <li>退職後の手続きサポート</li>
+                        <li>転職エージェント紹介</li>
+                        <li>書類作成サポート</li>
+                    </ul>
+                    <a href="#contact" class="btn">申し込む</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>即日対応プラン</h3>
+                    <div class="price">39,800<span>円（税込）</span></div>
+                    <ul class="pricing-features">
+                        <li>スタンダードプランの全サービス</li>
+                        <li>即日対応</li>
+                        <li>優先サポート</li>
+                        <li>当日中の退職連絡</li>
+                    </ul>
+                    <a href="#contact" class="btn">申し込む</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">よくある質問</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">Q：本当に会社に行かずに辞められるの？</div>
+                    <div class="faq-answer">A：はい。退職代行サービスをご利用いただくことで、出社せずに退職可能です。労働者には退職の自由があり、弊社が退職の意思表示を代行することで手続きを進めます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q：直接会社から連絡は来ますか？</div>
+                    <div class="faq-answer">A：原則すべてリブワクが窓口になります。本人への連絡は控えていただくよう伝えます。どうしても避けられない場合は、事前にご相談の上で対応方法を決めていきます。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q：家族や友人にバレませんか？</div>
+                    <div class="faq-answer">A：ご安心ください。本人の許可なく、どこにも情報が漏れることはありません。プライバシーを最大限に配慮して対応いたします。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q：退職届はどう書けばいい？</div>
+                    <div class="faq-answer">A：退職届のテンプレートをご用意していますので、ご安心ください。必要に応じてサポートいたします。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q：今日すぐに辞めたいです。対応可能ですか？</div>
+                    <div class="faq-answer">A：即日対応プランをご選択いただければ、当日中に会社へ連絡することが可能です。まずはLINEでご相談ください。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Q：支払いはどうすればいいですか？</div>
+                    <div class="faq-answer">A：クレジットカード、銀行振込、コンビニ決済など、複数の支払い方法をご用意しています。詳細はお申し込み時にご案内いたします。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">お問い合わせ</h2>
             <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-method">
-                        <h3>LINE</h3>
-                        <p>友達追加後、トーク画面からご相談ください。最も早く対応可能です。</p>
-                        <div style="margin-top: 15px;">
-                            <a href="#" class="cta-button">LINE友達追加</a>
-                        </div>
-                    </div>
-                    <div class="contact-method">
-                        <h3><i class="icon">📞</i> 電話</h3>
-                        <p>平日10:00〜19:00</p>
-                        <p><strong>0120-XXX-XXX</strong></p>
-                    </div>
-                    <div class="contact-method">
-                        <h3><i class="icon">📧</i> メール</h3>
-                        <p>24時間受付中・原則24時間以内に返信</p>
-                        <p><strong>info@reworks.co.jp</strong></p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">お名前 <span style="color: #e74c3c;">*</span></label>
-                            <input type="text" id="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">メールアドレス <span style="color: #e74c3c;">*</span></label>
-                            <input type="email" id="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">電話番号</label>
-                            <input type="tel" id="phone">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">お問い合わせ内容 <span style="color: #e74c3c;">*</span></label>
-                            <textarea id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit">送信する</button>
-                    </form>
-                </div>
+                <p>LINEで簡単に相談・お申し込みいただけます。<br>24時間受付中、最短即日対応可能です。</p>
+                <a href="#" class="btn">LINEで無料相談する</a>
+                <p style="margin-top: 30px;">メールでのお問い合わせはこちら</p>
+                <a href="mailto:info@ribuwaku.com" style="color: var(--navy); text-decoration: none;">info@ribuwaku.com</a>
             </div>
         </div>
     </section>
 
-    <!-- フッター -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>退職代行リブワク</h3>
-                    <p>あなたの新しい人生の一歩を、安心してスタートするためのサポートを提供します。</p>
-                    <!-- <div class="social-links">
-                        <a href="#"><span>X</span></a>
-                        <a href="#"><span>FB</span></a>
-                        <a href="#"><span>IG</span></a>
-                    </div> -->
-                </div>
-                <div class="footer-section">
-                    <h3>サービス</h3>
-                    <ul class="footer-links">
-                        <li><a href="#service">サービス内容</a></li>
-                        <li><a href="#flow">サービスの流れ</a></li>
-                        <li><a href="#pricing">料金プラン</a></li>
-                        <li><a href="#faq">よくある質問</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>会社情報</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">会社概要</a></li>
-                        <li><a href="#">プライバシーポリシー</a></li>
-                        <li><a href="#">特定商取引法に基づく表記</a></li>
-                        <li><a href="#">お問い合わせ</a></li>
-                    </ul>
-                </div>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#about">サービス紹介</a>
+                <a href="#process">ご利用の流れ</a>
+                <a href="#pricing">料金プラン</a>
+                <a href="#faq">よくある質問</a>
+                <a href="#contact">お問い合わせ</a>
             </div>
-            <div class="copyright">
-                &copy; 2025 退職代行リブワク All Rights Reserved.
-            </div>
+            <div class="copyright">© 2025 リブワク All Rights Reserved.</div>
         </div>
     </footer>
-
-    <script>
-        // FAQ開閉の簡易スクリプト
-        document.addEventListener('DOMContentLoaded', function () {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-
-                question.addEventListener('click', () => {
-                    // 現在の項目の開閉を切り替え
-                    item.classList.toggle('active');
-
-                    // 他の項目を閉じる場合はこのコメントを解除
-                    // faqItems.forEach(otherItem => {
-                    //     if(otherItem !== item) {
-                    //         otherItem.classList.remove('active');
-                    //     }
-                    // });
-                });
-            });
-        });
-
-        // スムーススクロール
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-
-                if (targetId === '#') return;
-
-                const targetElement = document.querySelector(targetId);
-                const headerOffset = 60;
-                const elementPosition = targetElement.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
-
 </html>
