@@ -2,16 +2,24 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#a8d8be">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>リブワク - やめる、を、前向きに。</title>
     <style>
         :root {
-            --mint-green: #a8d8be;
+            --mint-green: #4FB286;
             --light-mint: #d4ebdf;
             --beige: #f7f5ee;
             --navy: #2d4356;
             --dark-gray: #4a4a4a;
             --light-gray: #f5f5f5;
+        }
+        
+        html {
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
         }
         
         * {
@@ -72,10 +80,34 @@
             color: var(--dark-gray);
             font-weight: 500;
             transition: color 0.3s;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 20px;
         }
         
         nav ul li a:hover {
             color: var(--mint-green);
+        }
+        
+        nav ul li a.contact-btn {
+            background-color: var(--mint-green);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        
+        nav ul li a.contact-btn:hover {
+            background-color: #3a9a6f;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul li a.contact-btn {
+                padding: 8px 15px;
+                font-size: 13px;
+                white-space: nowrap;
+            }
         }
         
         .hero {
@@ -108,13 +140,14 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
             margin: 0 10px;
-            box-shadow: 0 3px 10px rgba(168, 216, 190, 0.4);
+            box-shadow: 0 3px 10px rgba(79, 178, 134, 0.4);
         }
         
         .btn:hover {
-            background-color: #8ec8a4;
+            background-color: #3a9a6f;
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
@@ -125,6 +158,30 @@
         
         .btn-secondary:hover {
             background-color: var(--light-gray);
+        }
+        
+        .mobile-support {
+            margin-top: 25px;
+            display: none;
+        }
+        
+        .sp-support-text {
+            font-size: 14px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+        
+        .sp-support-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-support {
+                display: block;
+            }
         }
         
         section {
@@ -166,17 +223,28 @@
         
         .feature-card {
             background-color: white;
-            padding: 30px;
+            padding: 25px 20px;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             flex: 1;
             min-width: 300px;
             max-width: 350px;
             transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
         
         .feature-card:hover {
             transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .feature-card {
+                padding: 20px 15px;
+                min-height: auto;
+            }
         }
         
         .feature-icon {
@@ -193,39 +261,66 @@
         
         .process {
             background-color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(var(--light-mint) 1px, transparent 1px);
+            background-size: 20px 20px;
+            opacity: 0.4;
+            z-index: 0;
         }
         
         .process-steps {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 30px;
+            gap: 40px;
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
         
         .step-card {
-            background-color: var(--light-gray);
-            padding: 30px;
-            border-radius: 10px;
+            background-color: white;
+            padding: 35px 25px;
+            border-radius: 15px;
             flex: 1;
             min-width: 200px;
             max-width: 230px;
             text-align: center;
             position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
         
         .step-number {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             background-color: var(--mint-green);
             color: white;
             border-radius: 50%;
             margin: 0 auto 20px;
             font-weight: 600;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(79, 178, 134, 0.3);
         }
         
         .step-card h3 {
@@ -234,23 +329,26 @@
             color: var(--navy);
         }
         
+        .step-card p {
+            color: var(--dark-gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
         .step-card:not(:last-child)::after {
-            content: "→";
-            position: absolute;
-            right: -20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-            color: var(--mint-green);
+            content: none;
         }
         
         .testimonials {
             background-color: var(--beige);
+            position: relative;
+            overflow: hidden;
         }
         
         .testimonial-container {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
         }
         
         .testimonial-card {
@@ -259,16 +357,45 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '❝';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 48px;
+            color: #6BD4A8;
+            opacity: 0.4;
+            font-family: serif;
+            line-height: 1;
         }
         
         .testimonial-text {
             font-style: italic;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            padding-left: 10px;
         }
         
         .testimonial-author {
             text-align: right;
             font-weight: 500;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .testimonial-author::before {
+            content: "";
+            display: inline-block;
+            width: 30px;
+            height: 2px;
+            background-color: #4FB286;
+            margin-right: 15px;
         }
         
         .faq {
@@ -317,6 +444,12 @@
             min-width: 300px;
             max-width: 350px;
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
         
         .pricing-card h3 {
@@ -340,17 +473,23 @@
         .pricing-features {
             margin-bottom: 30px;
             min-height: 150px;
+            padding-left: 0;
+            text-align: left;
         }
         
         .pricing-features li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             list-style-type: none;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.4;
         }
         
         .pricing-features li::before {
             content: "✓";
             color: var(--mint-green);
-            margin-right: 8px;
+            position: absolute;
+            left: 0;
             font-weight: bold;
         }
         
@@ -398,46 +537,223 @@
             opacity: 0.8;
         }
         
+        .line-icon {
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+        
+        .line-button {
+            margin: 25px 0;
+        }
+        
+        .fixed-bottom-cta {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            .fixed-bottom-cta {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                background-color: #fff;
+                padding: 12px 15px;
+                box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+                z-index: 999;
+            }
+            
+            .fixed-line-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--mint-green);
+                color: white;
+                text-decoration: none;
+                padding: 15px;
+                border-radius: 5px;
+                font-weight: 600;
+                font-size: 16px;
+                box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+            }
+            
+            footer {
+                margin-bottom: 60px;
+            }
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
-                flex-direction: column;
-                padding: 10px;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 15px;
             }
             
             .logo {
-                margin-bottom: 10px;
+                margin-bottom: 0;
+                font-size: 22px;
             }
             
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+            nav {
+                width: auto;
             }
             
             nav ul li {
-                margin: 5px 10px;
+                display: none;
+            }
+            
+            nav ul li:last-child {
+                display: block;
+                margin: 0;
+            }
+            
+            nav ul {
+                justify-content: flex-end;
             }
             
             .hero {
-                padding-top: 150px;
+                padding-top: 100px;
+                padding-bottom: 50px;
             }
             
             .hero h1 {
                 font-size: 28px;
+                line-height: 1.3;
+                margin-bottom: 15px;
             }
             
             .hero p {
                 font-size: 16px;
+                margin-bottom: 25px;
             }
             
             .btn {
                 display: block;
-                margin: 10px auto;
-                max-width: 80%;
+                margin: 12px auto;
+                max-width: 85%;
+                padding: 14px 20px;
+                font-size: 15px;
+            }
+            
+            section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 24px;
+                margin-bottom: 30px;
+            }
+            
+            .feature-card {
+                min-width: 100%;
+                margin-bottom: 15px;
+            }
+            
+            .features-container {
+                gap: 15px;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                align-items: center;
+                max-width: 90%;
+            }
+            
+            .step-card {
+                min-width: 85%;
+                margin-bottom: 45px;
+                position: relative;
+                max-width: 100%;
+                padding: 25px 20px;
             }
             
             .step-card:not(:last-child)::after {
-                display: none;
+                content: none;
+            }
+            
+            .pricing-card {
+                min-width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+            
+            .faq-question {
+                font-size: 16px;
+            }
+            
+            .faq-answer {
+                font-size: 14px;
+            }
+            
+            .footer-links {
+                flex-wrap: wrap;
+            }
+            
+            .footer-links a {
+                margin: 5px 10px;
+            }
+        }
+        
+        /* Additional Mobile Optimization */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 24px;
+            }
+            
+            .hero p {
+                font-size: 15px;
+            }
+            
+            .btn {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .section-title {
+                font-size: 22px;
+            }
+            
+            .about-content p {
+                font-size: 14px;
+                text-align: left;
+            }
+            
+            .feature-icon {
+                font-size: 30px;
+            }
+            
+            .feature-card h3 {
+                font-size: 18px;
+            }
+            
+            .feature-card p {
+                font-size: 14px;
+            }
+            
+            .pricing-card .price {
+                font-size: 28px;
+            }
+            
+            .pricing-card h3 {
+                font-size: 20px;
+            }
+            
+            .pricing-features li {
+                font-size: 14px;
+                text-align: left;
+                padding-left: 25px;
+                position: relative;
+            }
+            
+            .pricing-features li::before {
+                position: absolute;
+                left: 0;
             }
         }
     </style>
@@ -451,7 +767,8 @@
                     <li><a href="#about">サービス</a></li>
                     <li><a href="#process">ご利用の流れ</a></li>
                     <li><a href="#pricing">料金</a></li>
-                    <li><a href="#faq">よくある質問</a></li>
+                    <li><a href="#faq">質問</a></li>
+                    <li><a href="#contact" class="contact-btn">相談する</a></li>
                 </ul>
             </nav>
         </div>
@@ -461,8 +778,16 @@
         <div class="container">
             <h1>やめる、を、前向きに。</h1>
             <p>がまんしない退職を、あなたの代わりに。<br>LINEで簡単・全国対応。</p>
-            <a href="#contact" class="btn">LINEで無料相談</a>
+            <a href="#pricing" class="btn">料金を見る</a>
             <a href="#process" class="btn btn-secondary">サービスの流れを見る</a>
+            <div class="mobile-support">
+                <p class="sp-support-text">スマホで簡単・24時間受付中</p>
+                <div class="sp-support-icons">
+                    <span>📱</span>
+                    <span>💬</span>
+                    <span>🔒</span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -526,22 +851,22 @@
                 <div class="step-card">
                     <div class="step-number">1</div>
                     <h3>LINEで無料相談</h3>
-                    <p>あなたのお悩みを、丁寧にヒアリングします。</p>
+                    <p>あなたのお悩みや状況を丁寧にヒアリングします。お気軽にご相談ください。</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">2</div>
                     <h3>お申し込み・ご入金</h3>
-                    <p>正式な退職サポートを開始します。</p>
+                    <p>サービス内容にご納得いただけたら、正式な退職サポートを開始します。</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">3</div>
                     <h3>会社へ連絡・手続き代行</h3>
-                    <p>退職の意思を代行連絡。必要書類の催促も対応。</p>
+                    <p>退職の意思を代行連絡。必要書類の催促や手続きもすべて対応します。</p>
                 </div>
                 <div class="step-card">
                     <div class="step-number">4</div>
                     <h3>退職完了</h3>
-                    <p>書類受け取りなど、円満に退職できます。</p>
+                    <p>書類受け取りや最終確認など、円満に退職できるようサポートします。</p>
                 </div>
             </div>
         </div>
@@ -646,7 +971,22 @@
             <h2 class="section-title">お問い合わせ</h2>
             <div class="contact-container">
                 <p>LINEで簡単に相談・お申し込みいただけます。<br>24時間受付中、最短即日対応可能です。</p>
-                <a href="#" class="btn">LINEで無料相談する</a>
+                <div class="line-button">
+                    <a href="#" class="btn">
+                        <svg class="line-icon" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19.365 9.89a.998.998 0 0 1 0 1.414L15.15 15.518a.998.998 0 0 1-1.414-1.414L17.95 10.3l-4.192-3.763a.999.999 0 0 1-.023-1.414.999.999 0 0 1 1.414-.023l4.216 4.104c.189.189.293.445.293.713zm-8.51 1.437a.996.996 0 0 1-.293.713l-4.216 4.104a.998.998 0 0 1-1.414-.023 1 1 0 0 1 .023-1.414L9.147 10.3 4.934 6.518A.999.999 0 0 1 6.349 5.105l4.216 3.804a.999.999 0 0 1 .293.713zm4.154-8.327a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+                        </svg>
+                        LINEで無料相談する
+                    </a>
+                </div>
+                <div class="fixed-bottom-cta">
+                    <a href="#" class="fixed-line-btn">
+                        <svg class="line-icon" width="20" height="20" viewBox="0 0 24 24">
+                            <path fill="currentColor" d="M19.365 9.89a.998.998 0 0 1 0 1.414L15.15 15.518a.998.998 0 0 1-1.414-1.414L17.95 10.3l-4.192-3.763a.999.999 0 0 1-.023-1.414.999.999 0 0 1 1.414-.023l4.216 4.104c.189.189.293.445.293.713zm-8.51 1.437a.996.996 0 0 1-.293.713l-4.216 4.104a.998.998 0 0 1-1.414-.023 1 1 0 0 1 .023-1.414L9.147 10.3 4.934 6.518A.999.999 0 0 1 6.349 5.105l4.216 3.804a.999.999 0 0 1 .293.713zm4.154-8.327a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"/>
+                        </svg>
+                        今すぐLINEで相談する
+                    </a>
+                </div>
                 <p style="margin-top: 30px;">メールでのお問い合わせはこちら</p>
                 <a href="mailto:info@ribuwaku.com" style="color: var(--navy); text-decoration: none;">info@ribuwaku.com</a>
             </div>
