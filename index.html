@@ -114,7 +114,7 @@
         .hero {
             padding-top: 120px;
             padding-bottom: 80px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0);
             background-image: url("images/top.png");
             background-blend-mode: overlay;
             background-size: cover;
@@ -444,6 +444,8 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .pricing-card {
@@ -456,6 +458,8 @@
             max-width: 350px;
             text-align: center;
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-card:hover {
@@ -486,6 +490,7 @@
             min-height: 150px;
             padding-left: 0;
             text-align: left;
+            flex-grow: 1;
         }
 
         .pricing-features li {
@@ -531,21 +536,53 @@
             padding: 0 20px;
         }
 
+        .company-info {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .company-info h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: white;
+            font-weight: 600;
+        }
+
+        .company-name {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .company-address {
+            font-size: 12px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
         .footer-links {
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .footer-links a {
             color: white;
             margin: 0 15px;
             text-decoration: none;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
         }
 
         .copyright {
             font-size: 14px;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         .line-icon {
@@ -765,13 +802,85 @@
                 left: 0;
             }
         }
+
+        /* 割引表示用のスタイル - 幅を小さくした版 */
+        .discount-badge {
+            background-color: #ff6b6b;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            animation: pulse 1.5s infinite;
+            max-width: 200px;
+            width: fit-content;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-container {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+
+        #countdown {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 50%;
+            display: inline-block;
+            min-width: 25px;
+            text-align: center;
+            animation: flash 1s infinite;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 18px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <div class="logo">リブ<span>ワク</span></div>
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">リブ<span>ワク</span></div>
             <nav>
                 <ul>
                     <li><a href="#about">サービス</a></li>
@@ -810,8 +919,7 @@
                 <p>「辞めたいけど、怖くて言い出せない」<br>
                     「精神的に限界。でも会社には行けない」<br>
                     「もう、とにかく辞めたい」</p>
-                <p>そんなあなたのために、リブワクはやさしい退職の選択肢を提供します。<br>
-                    LINEで気軽に、やりとりはすべてスマホで完結。会社への連絡も、書類のやり取りも、すべて代行いたします。</p>
+                <p>そんなあなたのために、リブワクはやさしい退職の選択肢を提供します。LINEで気軽に、やりとりはすべてスマホで完結。会社への連絡も、書類のやり取りも、すべて代行いたします。</p>
             </div>
         </div>
     </section>
@@ -822,7 +930,7 @@
             <div class="features-container">
                 <div class="feature-card">
                     <div class="feature-icon">🕊️</div>
-                    <h3>退職の連絡ができず、長く悩んでいる</h3>
+                    <h3>退職の連絡ができず<br>長く悩んでいる</h3>
                     <p>どうやって伝えればいいか迷っている方、すべてお任せください。</p>
                 </div>
                 <div class="feature-card">
@@ -910,8 +1018,22 @@
             <h2 class="section-title">料金プラン</h2>
             <div class="pricing-cards">
                 <div class="pricing-card">
+                    <h3>アルバイトプラン</h3>
+                    <div class="price">11,900<span>円（税込）</span></div>
+                    <ul class="pricing-features">
+                        <li>退職の意思表示</li>
+                        <li>会社側との連絡代行</li>
+                        <li>必要書類の請求代行</li>
+                        <li>LINEサポート</li>
+                    </ul>
+                    <a href="#contact" class="btn">申し込む</a>
+                </div>
+                <div class="pricing-card">
                     <h3>スタンダードプラン</h3>
-                    <div class="price">29,800<span>円（税込）</span></div>
+                    <div class="discount-badge">先着10名限定 30%OFF</div>
+                    <div class="countdown-container">残り<span id="countdown">10</span>名様</div>
+                    <div class="original-price">21,000円</div>
+                    <div class="price">14,700<span>円（税込）</span></div>
                     <ul class="pricing-features">
                         <li>退職の意思表示</li>
                         <li>会社側との連絡代行</li>
@@ -929,17 +1051,6 @@
                         <li>退職後の手続きサポート</li>
                         <li>転職エージェント紹介</li>
                         <li>書類作成サポート</li>
-                    </ul>
-                    <a href="#contact" class="btn">申し込む</a>
-                </div>
-                <div class="pricing-card">
-                    <h3>即日対応プラン</h3>
-                    <div class="price">39,800<span>円（税込）</span></div>
-                    <ul class="pricing-features">
-                        <li>スタンダードプランの全サービス</li>
-                        <li>即日対応</li>
-                        <li>優先サポート</li>
-                        <li>当日中の退職連絡</li>
                     </ul>
                     <a href="#contact" class="btn">申し込む</a>
                 </div>
@@ -987,12 +1098,12 @@
             <div class="contact-container">
                 <p>LINEで簡単に相談・お申し込みいただけます。<br>24時間受付中、最短即日対応可能です。</p>
                 <div class="line-button">
-                    <a href="#" class="btn">
+                    <a href="https://lin.ee/zdOTb5kD" class="btn">
                         LINEで無料相談する
                     </a>
                 </div>
                 <div class="fixed-bottom-cta">
-                    <a href="#" class="fixed-line-btn">
+                    <a href="https://lin.ee/zdOTb5kD" class="fixed-line-btn">
                         今すぐLINEで相談する
                     </a>
                 </div>
@@ -1005,16 +1116,99 @@
 
     <footer>
         <div class="footer-container">
+            <div class="company-info">
+                <h3>会社概要</h3>
+                <p class="company-name">Release 株式会社</p>
+                <p class="company-address">東京都千代田区内神田 1-9-5 SF内神田ビル 8F</p>
+            </div>
             <div class="footer-links">
                 <a href="#about">サービス紹介</a>
                 <a href="#process">ご利用の流れ</a>
                 <a href="#pricing">料金プラン</a>
                 <a href="#faq">よくある質問</a>
                 <a href="#contact">お問い合わせ</a>
+                <a href="transaction-law.html">特定商取引法に基づく表記</a>
+                <a href="privacy-policy.html">プライバシーポリシー</a>
+                <a href="terms.html">利用規約</a>
             </div>
             <div class="copyright">© 2025 リブワク All Rights Reserved.</div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const countdownElement = document.getElementById('countdown');
+
+            // 初期値は8名で固定
+            let currentCount = 8;
+
+            // ローカルストレージから保存されたカウント値を取得（あれば）
+            const savedCount = localStorage.getItem('remainingCount');
+            if (savedCount !== null) {
+                currentCount = parseInt(savedCount);
+            }
+
+            // 表示を更新
+            countdownElement.textContent = currentCount;
+
+            // 10分ごとにカウントを減少させる
+            const tenMinutesInMs = 10 * 60 * 1000; // 10分をミリ秒に変換
+
+            // 最後の減少時間を取得
+            let lastDecreaseTime = localStorage.getItem('lastDecreaseTime');
+            if (lastDecreaseTime) {
+                lastDecreaseTime = parseInt(lastDecreaseTime);
+                const currentTime = new Date().getTime();
+
+                // 前回の減少から10分以上経過している場合
+                if (currentTime - lastDecreaseTime >= tenMinutesInMs && currentCount > 1) {
+                    currentCount--;
+                    localStorage.setItem('remainingCount', currentCount);
+                    localStorage.setItem('lastDecreaseTime', currentTime);
+                    countdownElement.textContent = currentCount;
+                }
+            } else {
+                // 初めての訪問
+                localStorage.setItem('lastDecreaseTime', new Date().getTime());
+            }
+
+            // 今後も10分ごとに減少させる
+            setInterval(function () {
+                if (currentCount > 1) {
+                    currentCount--;
+                    localStorage.setItem('remainingCount', currentCount);
+                    localStorage.setItem('lastDecreaseTime', new Date().getTime());
+                    countdownElement.textContent = currentCount;
+                }
+            }, tenMinutesInMs);
+
+            // ページの読み込み回数をカウント
+            let pageLoadCount = localStorage.getItem('pageLoadCount') || 0;
+            pageLoadCount = parseInt(pageLoadCount) + 1;
+            localStorage.setItem('pageLoadCount', pageLoadCount);
+
+            // 5回リロードするごとにカウントを1減らす
+            if (pageLoadCount % 5 === 0 && currentCount > 1) {
+                currentCount--;
+                localStorage.setItem('remainingCount', currentCount);
+                countdownElement.textContent = currentCount;
+            }
+
+            const logo = document.querySelector('.logo');
+
+            // ロゴにクリックイベントを追加
+            if (logo) {
+                logo.style.cursor = 'pointer'; // カーソルをポインターに変更してクリック可能であることを示す
+
+                logo.addEventListener('click', function () {
+                    // スムーズにトップにスクロール
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+    </script>
 </body>
 
 </html>
